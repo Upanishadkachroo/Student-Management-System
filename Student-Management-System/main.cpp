@@ -18,6 +18,60 @@ void addstudent(vector<Student> &students){
     cout<<"Course Added Sucessfully"<<endl;
 }
 
+void displayallstudents(const vector<Student> &students){
+    if(students.empty()){
+        cout<<"No students record found"<<endl;
+        return;
+    }
+    for(const auto &student: students){
+        student.display();
+    }
+}
+
+//Sort karne k liye
+void sortstudents(vector<Student> &students){
+    int sortchoice;
+    cout<<"Sort by: "<<endl;
+    cout<<"1. Roll Number "<<endl;
+    cout<<"2. Name "<<endl;
+    cout<<"3. Marks "<<endl;
+    cout<<"Enter choice "<<endl;
+    cin>>sortchoice;
+
+    switch(sortchoice){
+        case 1:
+        sort(students.begin(), students.end(), Student::comparebyroll);
+        cout<<"Students sorted by roll number "<<endl;
+        break;
+
+        case 2:
+        sort(students.begin(), students.end(), Student::comparebyname);
+        cout<<"Students sorted by name "<<endl;
+        break;
+
+        case 3:
+        sort(students.begin(), students.end(), Student::comparebymarks);
+        cout<<"Students sorted by marks"<<endl;
+        break;
+
+        default:
+        cout<<"Invalid choice!"<<endl;
+    }  
+}
+
+//to search students
+void searchstudent(const vector<Student> students, int roll){
+    for(const auto &student: students){
+        if(student.getroolnumber()==roll){
+            student.display();
+            return;
+        }
+    }
+    cout<<"Student not found"<<endl;
+}
+
+
+
 int main(){
     vector<Student> students=Student::loadfromfile("database.txt");
     int choice, roll;
