@@ -70,7 +70,29 @@ void searchstudent(const vector<Student> students, int roll){
     cout<<"Student not found"<<endl;
 }
 
+//to delete
+void deletestudent(vector<Student> &students, int roll){
+    auto it=remove_if(students.begin(), students.end(), [roll](const Student &s) {
+        return s.getroolnumber()==roll;
+    });
 
+    if(it != students.end()){
+        students.erase(it, students.end());
+        cout<<"Students deleted successfully"<<endl;
+    }
+    else{
+        cout<<"Student not found"<<endl;
+    }
+}
+
+//to save file
+void savetofile(const vector<Student> &students, const string &filename){
+    ofstream file(filename);
+    for(const auto &student: students){
+        student.savetofile(file);
+    }
+    file.close();
+}
 
 int main(){
     vector<Student> students=Student::loadfromfile("database.txt");
