@@ -27,3 +27,20 @@ float Student::getmarks() const{
 void Student::display() const{
     cout<<"Roll No. "<<rollnumber<<" | Name: "<<name<<" | Course: "<<course<<"| Marks: "<<marks<<endl;
 }
+
+//saves data to file
+void Student::savetofile(ofstream &out) const{
+    cout<<rollnumber<<" "<<name<<" "<<course<<" "<<marks<<endl;
+}
+
+//now load the data from file
+vector<Student> Student::loadfromfile(const string &filename){
+    vector<Student> students;
+    ifstream file(filename);
+
+    if(file.is_open()){
+        string name, course;
+        int roll;
+        float marks;
+    }
+}
