@@ -42,5 +42,14 @@ vector<Student> Student::loadfromfile(const string &filename){
         string name, course;
         int roll;
         float marks;
+
+        while(file>>roll>>name>>course>>marks){
+            students.push_back(Student(name, roll, course, marks));
+        }
+
+        file.close();
     }
+    return students;
 }
+
+//compare roll number in ascending order
