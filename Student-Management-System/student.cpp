@@ -53,3 +53,16 @@ vector<Student> Student::loadfromfile(const string &filename){
 }
 
 //compare roll number in ascending order
+bool Student::comparebyroll(const Student &s1, const Student &s2){
+    return s1.getroolnumber() < s2.getroolnumber();
+}
+
+//comapre by name
+bool Student::comparebyname(const Student &s1, const Student &s2){
+    return s1.getname() < s2.getname();
+}
+
+//comapre student by marks
+bool Student::comparebymarks(const Student &s1, const Student &s2){
+    return s1.getmarks() < s2.getmarks();
+}
