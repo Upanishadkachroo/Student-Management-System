@@ -1,6 +1,6 @@
 #include "student.h"
 
-//constructor
+//constructor call
 Student::Student(string n, int r, string c, float m){
     name=n;
     rollnumber=r;
