@@ -1,9 +1,5 @@
 ## **📌 Student Management System**  
-
-![GitHub Repo Stars](https://img.shields.io/github/stars/yourusername/StudentManagement?style=social)  
-![GitHub forks](https://img.shields.io/github/forks/yourusername/StudentManagement?style=social)  
-![GitHub contributors](https://img.shields.io/github/contributors/yourusername/StudentManagement)  
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/StudentManagement)  
+ 
 
 ### **📜 Description**  
 A simple **C++ Student Management System** that allows users to **add, view, sort, search, and delete student records**. The system also supports **file storage**, ensuring data persistence.  
