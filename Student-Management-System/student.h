@@ -44,7 +44,7 @@ class Student{
     void savetofile(ofstream &out) const;
     static vector<Student> loadfromfile(const string &filename);
 
-    //sorting 
+    //sorting method by stl
     static bool comparebyroll(const Student &s1, const Student &s2);
     static bool comparebyname(const Student &s1, const Student &s2);
     static bool comparebymarks(const Student &s1, const Student &s2);
